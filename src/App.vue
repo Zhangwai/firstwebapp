@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    
+    home
+    <i class="iconfont">&#xe719;</i>
+    <i class="iconfont">&#xe622;</i>
   </div>
 </template>
 
@@ -10,14 +12,10 @@ export default {
   name: 'App'
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+i{
+  font-size: 50px;
 }
 </style>
+
+

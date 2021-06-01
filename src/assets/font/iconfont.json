@@ -1,0 +1,44 @@
+{
+  "id": "2585193",
+  "name": "firstwebapp",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6238495",
+      "name": "定位",
+      "font_class": "duomeitiicon-",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "8348113",
+      "name": "地球",
+      "font_class": "diqiu",
+      "unicode": "e719",
+      "unicode_decimal": 59161
+    },
+    {
+      "icon_id": "13229908",
+      "name": "箭头下",
+      "font_class": "jiantouxia",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "18043198",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "19877344",
+      "name": "箭头左",
+      "font_class": "jiantouzuo",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    }
+  ]
+}

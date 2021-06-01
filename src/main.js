@@ -6,6 +6,13 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+//css
+import './assets/css/reset200802.css'
+import './assets/css/iconfont.css'
+//js
+import FastClick from 'fastclick' //300ms的延迟
+
+FastClick.attach(document.body);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
