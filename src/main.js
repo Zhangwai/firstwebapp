@@ -4,6 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//swiper swiper6.x分页器要单独引
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import Swiper, { Pagination, Navigation } from 'swiper';
+Swiper.use([Pagination, Navigation]);
+import 'swiper/swiper-bundle.css'
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 //css
