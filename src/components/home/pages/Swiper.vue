@@ -12,23 +12,9 @@
 </template>
 <script>
 export default {
+    props:['swiperList'],
    data() {
       return {
-        swiperList:[
-            {
-                id:'01',
-                imgUrl:"//imgs.qunarzz.com/vs_ceph_vcimg/79faa5a73731e84a7731db49d5baa91e.jpeg"
-            },
-             {
-                id:'02',
-                imgUrl:"//imgs.qunarzz.com/vs_ceph_vcimg/79faa5a73731e84a7731db49d5baa91e.jpeg"
-            },
-             {
-                id:'03',
-                imgUrl:"//imgs.qunarzz.com/vs_ceph_vcimg/79faa5a73731e84a7731db49d5baa91e.jpeg"
-            },
-            
-        ],
         swiperOptions: {
           pagination: {
             el: '.swiper-pagination',

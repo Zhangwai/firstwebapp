@@ -1,13 +1,13 @@
 <template>
     <div class="home">
         <home-header></home-header>
-        <home-swiper></home-swiper>
-        <home-icons></home-icons>
+        <home-swiper :swiperList='swiperList'></home-swiper>
+        <home-icons :iconsList='iconsList'></home-icons>
         <home-location></home-location>
         <home-activity></home-activity>
-        <home-hot></home-hot>
-        <home-like></home-like>
-        <home-vacation></home-vacation>
+        <home-hot :hotList='hotList'></home-hot>
+        <home-like :likeList='likeList'></home-like>
+        <home-vacation :vacationList='vacationList'></home-vacation>
     </div>
 </template>
 <script>
@@ -20,6 +20,16 @@
     import HomeLike from './pages/Like'
     import HomeVacation from './pages/Vacation'
     export default{
+        data(){
+            return {
+                swiperList:[],
+                iconsList:[],
+                hotList:[],
+                likeList:[],
+                vacationList:[]
+            
+            }
+        },
         components:{
             HomeHeader,
             HomeSwiper,
@@ -30,6 +40,17 @@
             HomeLike,
             HomeVacation
 
+        },
+        mounted(){
+            this.$http.get("static/mock/dataHome.json")
+            .then((res)=>{
+                const data = res.data.data[0]
+                this.swiperList = data.swiperList;
+                this.iconsList = data.iconsList;
+                this.hotList = data.hotList;
+                this.likeList = data.likeList;
+                this.vacationList = data.vacationList;
+            })
         }
     }
 </script>

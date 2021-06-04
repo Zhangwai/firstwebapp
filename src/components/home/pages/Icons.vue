@@ -17,6 +17,7 @@
 </template>
 <script>
 export default {
+    props:['iconsList'],
     data(){
         return{
             swiperOptions: {
@@ -25,59 +26,7 @@ export default {
                     clickable: true // 允许点击跳转
                 },
                 loop:true
-            },
-            iconsList:[
-                {
-                    id:"01",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"02",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"03",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"04",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"05",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"06",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"07",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"08",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"09",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-                {
-                    id:"10",
-                    imgUrl:"http://s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                    title:"酒店"
-                },
-            ]
+            }
         }
     },
     computed:{

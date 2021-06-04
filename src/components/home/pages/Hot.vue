@@ -19,34 +19,10 @@
 </template>
 <script>
 export default {
+    props:['hotList'],
     data(){
         return {
-            hotList:[
-            {
-                id:'01',
-                title:"福州欧乐堡海洋世界",
-                price:"￥193.8",
-                imgUrl:"https://imgs.qunarzz.com/sight/p0/2003/98/985f7f9721ace766a3.img.jpg_250x250_40d713cb.jpg"
-            },
-             {
-                id:"02",
-                title:"罗源湾海洋世界",
-                price:"￥116.5",
-                imgUrl:"https://imgs.qunarzz.com/sight/p0/1508/ff/ff5bbbcf8cfdec3.img.jpg_250x250_f91d8108.jpg"
-            },
-            {
-                id:"03",
-                title:"闽江夜游",
-                price:"￥85.0",
-                imgUrl:"https://imgs.qunarzz.com/sight/p0/201403/10/7c19e02265d1586824b5b18495222383.jpg_250x250_40e6663a.jpg"
-            },
-            {
-                id:'04',
-                title:"仙人井景区",
-                price:"￥15.0",
-                imgUrl:"https://imgs.qunarzz.com/sight/p6/201211/00/791325a30559a06b93835fbb.jpg_250x250_bcab329e.jpg"
-            }
-            ]
+            
         }
     }
 }

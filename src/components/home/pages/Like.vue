@@ -28,42 +28,10 @@
 </template>
 <script>
 export default {
+    props:['likeList'],
     data(){
         return {
-            likeList:[
-                {
-                    id:'01',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1504/54/54acf4a672e58102.water.jpg_200x200_38c89023.jpg",
-                    title:"贵安水世界",
-                    msg:"5218",
-                    price:"169",
-                    map:"连江县"
-                },
-                {
-                    id:'02',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/2003/98/985f7f9721ace766a3.img.jpg_200x200_0b150b57.jpg",
-                    title:"福州欧乐堡海洋世界",
-                    msg:"2888",
-                    price:"193.8",
-                    map:"永泰县"
-                },
-                {
-                    id:'03',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1507/cd/cd5907320e7a1a1a.img.jpg_200x200_6de235db.jpg",
-                    title:"中国福州云顶",
-                    msg:"6721",
-                    price:"153.8",
-                    map:"永泰县"
-                },
-                {
-                    id:'04',
-                    imgUrl:"https://imgs.qunarzz.com/sight/p0/1505/c0/c016dce7a3156fd1.water.jpg_200x200_9e096461.jpg",
-                    title:"东方第一漂",
-                    msg:"425",
-                    price:"134",
-                    map:"福清市"
-                }
-            ]
+            
         }
     }
 }

@@ -18,8 +18,11 @@ import 'css/reset200802.css'
 import 'css/iconfont.css'
 //js
 import FastClick from 'fastclick' //300ms的延迟
-
 FastClick.attach(document.body);
+
+//axios
+import axios from "axios"
+Vue.prototype.$http = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
