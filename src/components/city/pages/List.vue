@@ -1,20 +1,12 @@
 <template>
     <div>
-        <div>
-            <div class="list-title">A</div>
+        <div v-for="(val,key) in cities" :key="val.id">
+            <div class="list-title">{{key}}</div>
             <ul class="list-list">
-                <li class="list-item">
-                    A1111111111111111111111111111111111111111
+                <li class="list-item" v-for="item in val" :key="item.id">
+                    {{item.name}}
                 </li>
-                <li class="list-item">
-                    A
-                </li>
-                <li class="list-item">
-                    A
-                </li>
-                <li class="list-item">
-                    A
-                </li>      
+        
             </ul>
 
         </div>
@@ -23,7 +15,7 @@
 </template>
 <script>
 export default {
-    
+    props:['cities']
 }
 </script>
 <style scoped lang="stylus">
@@ -58,11 +50,12 @@ export default {
     }
     .list-item{      
         text-align: center;
-        height: .9rem;
+        font-size:.28rem;
         line-height: .9rem;
         float: left;
         width: 25%;
         border-bottom: .02rem solid #ddd;
         textOverflow();
+        
     }
 </style>

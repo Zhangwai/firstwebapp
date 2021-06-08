@@ -2,8 +2,8 @@
     <div class="city">
         <city-header></city-header>
         <city-hot></city-hot>
-        <city-sort></city-sort>
-        <city-list></city-list>
+        <city-sort :cities="cities"></city-sort>
+        <city-list :cities="cities"></city-list>
     </div>
 </template>
 <script>
@@ -17,7 +17,31 @@ export default {
         CityHot,
         CitySort,
         CityList
-    }
+    },
+    data(){
+
+        return {
+            cities:{}
+        }
+    },
+
+    mounted(){
+        this.$http.get("static/mock/city.json")
+        .then((res)=>{
+            const data = res.data.citylist
+            let data_res = {}
+            for(let i = 0;i<26;i++){
+                data_res[String.fromCharCode((65 + i))] = [];
+            }
+             for(let item of data){
+                   var firstcode = item.SpellSX.substr(0,1)
+                   data_res[firstcode].push(item)
+                }
+                // console.log(data_res)
+            this.cities = data_res;
+           
+        })
+ }
 }
 </script>
 <style scoped>
