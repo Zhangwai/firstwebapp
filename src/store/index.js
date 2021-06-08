@@ -3,14 +3,19 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+let defaultCity = '上海市';
+if(localStorage.city){
+    defaultCity = localStorage.city;
+}
+
 const state = {
-    city:'上海'
+    city:defaultCity
 }
 
 const mutations = {
     changeCity(state,cityName){
         state.city = cityName
-        
+        localStorage.city = cityName
     }
 }
 export default new Vuex.Store({

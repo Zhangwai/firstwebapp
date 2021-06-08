@@ -19,6 +19,7 @@
     import HomeHot from './pages/Hot'
     import HomeLike from './pages/Like'
     import HomeVacation from './pages/Vacation'
+    import {mapState} from 'vuex'
     export default{
         data(){
             return {
@@ -26,7 +27,8 @@
                 iconsList:[],
                 hotList:[],
                 likeList:[],
-                vacationList:[]
+                vacationList:[],
+              
             
             }
         },
@@ -41,16 +43,28 @@
             HomeVacation
 
         },
+        computed:{
+            ...mapState(['city'])
+        },
+        methods:{
+            getHttp(){
+                 this.$http.get("static/mock/dataHome.json")
+                .then((res)=>{
+                    const data = res.data.data;
+                    data.forEach((item,index) => {
+                        if(item.city == this.city){
+                            this.swiperList = item.swiperList;
+                            this.iconsList = item.iconsList;
+                            this.hotList = item.hotList;
+                            this.likeList = item.likeList;
+                            this.vacationList = item.vacationList;
+                        }
+                    });
+                })
+            }
+        },
         mounted(){
-            this.$http.get("static/mock/dataHome.json")
-            .then((res)=>{
-                const data = res.data.data[0]
-                this.swiperList = data.swiperList;
-                this.iconsList = data.iconsList;
-                this.hotList = data.hotList;
-                this.likeList = data.likeList;
-                this.vacationList = data.vacationList;
-            })
+           this.getHttp()
         }
     }
 </script>
