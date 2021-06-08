@@ -32,7 +32,13 @@ export default {
                    var firstcode = item.SpellSX.substr(0,1)
                    data_res[firstcode].push(item)
                 }
-                // console.log(data_res)
+                
+              for(let i in data_res){
+                  if(data_res[i].length==0){
+                      delete data_res[i]
+                  }
+              }
+                
             this.cities = data_res;
            
         })

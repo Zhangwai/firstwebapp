@@ -1,5 +1,4 @@
 <template>
-    
         <div class="wrapper" ref="wrapper">
             <div class="content">
                     <!-- hot -->
@@ -36,14 +35,14 @@
                 <!-- sort -->
                 <div class="sort-title">字母排序</div>
                 <ul class="sort-list">
-                    <li class="sort-item" v-for="(val,key) in cities" :key="key">
+                    <li class="sort-item" v-for="(val,key) in cities" :key="key" @click="changeSort(key)">
                         {{key}}
                     </li>        
                 </ul>
                 </div>
                 <!-- list -->
                 <div>
-                    <div v-for="(val,key) in cities" :key="val.id">
+                    <div v-for="(val,key) in cities" :key="val.id" :ref="key">
                         <div class="list-title">{{key}}</div>
                         <ul class="list-list">
                             <li class="list-item" v-for="item in val" :key="item.id">
@@ -56,22 +55,25 @@
                 </div>
             </div>
         </div>
-    
-
 </template>
 <script>
 import BetterScroll from 'better-scroll'
 export default {
+
+    props:['cities','bd'],
+    methods:{
+        changeSort(sortName){
+            this.bs.scrollToElement(this.$refs[sortName][0])
+         
+        }
+    },
     data(){
         return{
             bs:'',
 
         }
     },
-    props:['cities','bd'],
     mounted(){
-        
-        
         this.$nextTick(() => {
         this.bs = new BetterScroll(this.$refs['wrapper'], {
         movable: true,
