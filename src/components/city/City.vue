@@ -1,31 +1,26 @@
 <template>
-    <div class="city">
+    <div class="city" ref="city">
         <city-header></city-header>
-        <city-hot></city-hot>
-        <city-sort :cities="cities"></city-sort>
         <city-list :cities="cities"></city-list>
     </div>
 </template>
 <script>
     import CityHeader from "./pages/Header"
-    import CityHot from "./pages/Hot"
-    import CitySort from "./pages/Sort"
     import CityList from "./pages/List"
 export default {
     components:{
         CityHeader,
-        CityHot,
-        CitySort,
         CityList
     },
     data(){
 
         return {
-            cities:{}
+            cities:{},
         }
     },
 
     mounted(){
+        this.$refs.city.style.height = document.documentElement.clientHeight  + 'px'
         this.$http.get("static/mock/city.json")
         .then((res)=>{
             const data = res.data.citylist
@@ -47,5 +42,6 @@ export default {
 <style scoped>
     .city{
         background: #f5f5f5;
+        position: relative;
     }
 </style>
