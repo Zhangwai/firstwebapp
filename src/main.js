@@ -23,10 +23,14 @@ FastClick.attach(document.body);
 //axios
 import axios from "axios"
 Vue.prototype.$http = axios
+
+//vuex
+import store from './store'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },//组件
   template: '<App/>'//模板
 })
