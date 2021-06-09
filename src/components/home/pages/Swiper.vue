@@ -29,7 +29,7 @@ export default {
 <style type="text/css" scoped lang="stylus">
 
     .header-swiper{
-      
+        width: 100%;
         height: 0;
         padding-bottom:25%
         background:#ccc

@@ -5,7 +5,7 @@
             猜你喜欢
         </div>
         <ul>
-            <li class="like-item border-bottom" v-for="item in likeList" :key="item.id">
+            <li class="like-item border-bottom" v-for="item in likeList" :key="item.id" @click="toDetails">
                 <div class="like-img">
                     <img :src="item.imgUrl" alt="item.title">
                 </div>
@@ -29,6 +29,11 @@
 <script>
 export default {
     props:['likeList'],
+    methods:{
+        toDetails(){
+            this.$router.push('/detail')
+        }
+    },
     data(){
         return {
             
