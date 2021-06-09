@@ -11,12 +11,19 @@
     
 
         <div class="img-swipper" v-show="imgSwipper" @click="hideImg">
-            <img src="http://img1.qunarzz.com/sight/p0/1504/d8/d8506e68147b841f.water.jpg_r_800x800_027fbdc2.jpg" alt="">
+             <swiper ref="mySwiper" :options="swiperOptions">
+
+                <swiper-slide v-for="item in bannerList" :key="item.id">
+                    <img :src='item.imgUrl'>
+                </swiper-slide>
+        
+            </swiper>
+            <div class="swiper-pagination" slot="pagination"></div>
         </div>
     </div>
 </template>
 <script>
-export default {
+export default {  
     methods:{
         showImg(){
             this.imgSwipper = true
@@ -27,6 +34,28 @@ export default {
     },
     data(){
         return{
+            swiperOptions: {
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction',
+                    clickable: true // 允许点击跳转1
+                },
+                loop:true
+                },
+            bannerList:[
+                {
+                    id:'01',
+                    imgUrl:'http://img1.qunarzz.com/sight/p0/1504/d8/d8506e68147b841f.water.jpg_r_800x800_027fbdc2.jpg'
+                },
+                {
+                    id:'02',
+                    imgUrl:'http://img1.qunarzz.com/sight/p0/1504/54/54acf4a672e58102.water.jpg_r_800x800_1b4678a5.jpg'
+                },
+                {
+                    id:'03',
+                    imgUrl:'http://img1.qunarzz.com/sight/p0/1504/8f/8ffef8ed47bcf132.water.jpg_r_800x800_77dd4c9f.jpg'
+                }
+            ],
             imgSwipper:false
         }
     }
@@ -66,5 +95,10 @@ export default {
 }
 .img-swipper img{
     width: 100%;
+}
+.swiper-pagination{
+    color: #fff;
+    font-size: .32rem;
+    bottom: 0.6rem;
 }
 </style>
