@@ -14,9 +14,7 @@
         <div class="header-right">
             <router-link to="/city">
             {{city}}<span class="iconfont">&#xe62a;</span>
-            </router-link>
-                
-           
+            </router-link>  
         </div>
     </div>
 </template>

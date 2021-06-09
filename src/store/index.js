@@ -9,13 +9,20 @@ if(localStorage.city){
 }
 
 const state = {
-    city:defaultCity
+    city:defaultCity,
+    detail_img_banner:false
 }
 
 const mutations = {
     changeCity(state,cityName){
         state.city = cityName
         localStorage.city = cityName
+    },
+    showBanner(state){
+        state.detail_img_banner = true;
+    },
+    hideBanner(state){
+        state.detail_img_banner = false;
     }
 }
 export default new Vuex.Store({

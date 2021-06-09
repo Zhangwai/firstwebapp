@@ -10,7 +10,7 @@
         </div>
     
 
-        <div class="img-swipper" v-show="imgSwipper" @click="hideImg">
+        <div class="img-swipper" v-show="detail_img_banner" @click="hideImg" @touchmove.prevent>
              <swiper ref="mySwiper" :options="swiperOptions">
 
                 <swiper-slide v-for="item in bannerList" :key="item.id">
@@ -23,17 +23,26 @@
     </div>
 </template>
 <script>
+import {mapState} from "vuex"
+import {mapMutations} from 'vuex'
 export default {  
+     computed:{
+        ...mapState(['detail_img_banner'])
+    },
     methods:{
+        ...mapMutations(["showBanner","hideBanner"]),
         showImg(){
-            this.imgSwipper = true
+            this.showBanner()
+            // this.img_swipper = true;
         },
         hideImg(){
-            this.imgSwipper = false
+            this.hideBanner()
+            // this.img_swipper = false;
         }
     },
     data(){
         return{
+            // img_swipper:false,
             swiperOptions: {
                 pagination: {
                     el: '.swiper-pagination',
@@ -56,7 +65,7 @@ export default {
                     imgUrl:'http://img1.qunarzz.com/sight/p0/1504/8f/8ffef8ed47bcf132.water.jpg_r_800x800_77dd4c9f.jpg'
                 }
             ],
-            imgSwipper:false
+            
         }
     }
 }
