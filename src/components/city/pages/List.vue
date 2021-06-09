@@ -61,7 +61,7 @@ import BetterScroll from 'better-scroll'
 import {mapMutations} from 'vuex'
 export default {
 
-    props:['cities','bd'],
+    props:['cities'],
     methods:{
         changeSort(sortName){
             this.bs.scrollToElement(this.$refs[sortName][0])

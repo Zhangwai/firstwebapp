@@ -28,6 +28,7 @@
                 hotList:[],
                 likeList:[],
                 vacationList:[],
+                changeCityName:''
               
             
             }
@@ -64,7 +65,14 @@
             }
         },
         mounted(){
-           this.getHttp()
+            this.changeCityName = this.city
+            this.getHttp()
+        },
+        activated(){
+            if(this.changeCityName != this.city){
+                this.getHttp();
+                this.changeCityName = this.city
+            }
         }
     }
 </script>
